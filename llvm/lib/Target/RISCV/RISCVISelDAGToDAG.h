@@ -47,6 +47,12 @@ public:
   bool SelectAddrFI(SDValue Addr, SDValue &Base);
   bool SelectBaseAddr(SDValue Addr, SDValue &Base);
 
+  // Select an address into a single register.
+  bool SelectAddr(SDValue N, SDValue &Base) {
+    Base = N;
+    return true;
+  }
+
   bool selectShiftMask(SDValue N, unsigned ShiftWidth, SDValue &ShAmt);
   bool selectShiftMaskXLen(SDValue N, SDValue &ShAmt) {
     return selectShiftMask(N, Subtarget->getXLen(), ShAmt);

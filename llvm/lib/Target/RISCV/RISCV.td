@@ -521,6 +521,13 @@ def : ProcessorModel<"sifive-u74", SiFive7Model, [Feature64Bit,
                                                   FeatureStdExtC],
                      [TuneSiFive7]>;
 
+
+def : ProcessorModel<"zcb", NoSchedModel, [FeatureStdExtA,
+                                           FeatureStdExtC,
+                                           FeatureStdExtF,
+                                           FeatureStdExtM,
+                                           FeatureStdExtV]>;
+
 //===----------------------------------------------------------------------===//
 // Define the RISC-V target.
 //===----------------------------------------------------------------------===//
